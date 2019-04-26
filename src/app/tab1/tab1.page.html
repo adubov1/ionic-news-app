@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      USA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<style>
+virtual-scroller {
+  width: 350px;
+  height: 2000px;
+}
+</style>
+  <!--<virtual-scroller #scroll [items]="data.articles">-->
+  <ion-card *ngFor="let article of data?.articles">
+      <ion-card-header>
+        <ion-img (click)="openWithInAppBrowser(article.url)" [src]="article.urlToImage"></ion-img>
+        <ion-card-title>{{article.title.split(' - ')[0]}}</ion-card-title>
+      </ion-card-header>
+    <ion-card-content>{{article.description}}</ion-card-content>
+  </ion-card>
+  <!--</virtual-scroller>-->
+</ion-content>
